@@ -21,16 +21,10 @@ import Stack from "@mui/material/Stack";
 import Token from "../Token";
 
 const Common = () => {
-  const [file, setFile] = useState("");
+  const [file, setFile] = useState({});
   const [file1, setFile1] = useState("");
 
-  const Input = styled("input")({
-    display: "none"
-  });
   const handleChange = (e) => {
-    setFile(URL.createObjectURL(e.target.files[0]));
-  };
-  const handleChange1 = (e) => {
     setFile(URL.createObjectURL(e.target.files[0]));
   };
 
@@ -43,7 +37,6 @@ const Common = () => {
   }));
 
   const [anchorEl, setAnchorEl] = React.useState(null);
-
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -125,11 +118,11 @@ const Common = () => {
                         horizontal: "left"
                       }}
                     >
-                      <Token />
+                      <Token handleClose={handleClose} />
                     </Popover>
-                    {/* <img src={file} alt="" /> */}
                   </Container>
                 </Box>
+                {<img src={file} alt="" />}
               </Container>
 
               <Container>
@@ -172,7 +165,7 @@ const Common = () => {
                           horizontal: "left"
                         }}
                       >
-                        <Token />
+                        <Token handleChange={handleChange} />
                       </Popover>
                       <Container></Container>
                     </Container>
@@ -583,7 +576,7 @@ const Common = () => {
                     width: "500px"
                   }}
                 >
-                  <img src={file} alt="" />
+                  {/* <img src={file} alt="" /> */}
                 </Box>
               </Box>
             </Container>

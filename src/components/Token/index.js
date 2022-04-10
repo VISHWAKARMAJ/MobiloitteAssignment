@@ -8,19 +8,13 @@ import IconButton from "@mui/material/IconButton";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 
-const Token = () => {
-  const [file, setFile] = useState("");
-  const [file1, setFile1] = useState("");
+const Token = (props) => {
+  const { handleChange } = props;
 
   const Input = styled("input")({
     display: "none"
   });
-  const handleChange = (e) => {
-    setFile(URL.createObjectURL(e.target.files[0]));
-  };
-  const handleChange1 = (e) => {
-    setFile1(URL.createObjectURL(e.target.files[0]));
-  };
+
   return (
     <div>
       <Box sx={{ heigth: "1200px", width: "500px", borderRadius: "20px" }}>
@@ -46,7 +40,7 @@ const Token = () => {
             <Stack direction="row" alignItems="center" spacing={2}>
               <label htmlFor="contained-button-file">
                 <Input
-                  onClick={handleChange}
+                  onChange={handleChange}
                   accept="image/*"
                   id="contained-button-file"
                   multiple
@@ -55,7 +49,6 @@ const Token = () => {
                 <Button variant="contained" component="span">
                   Upload
                 </Button>
-                <img src={file} alt="" />
               </label>
             </Stack>
           </Box>
