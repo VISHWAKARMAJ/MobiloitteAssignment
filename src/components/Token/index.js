@@ -1,121 +1,146 @@
-import * as React from "react";
-import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import PropTypes from "prop-types";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
+import React from "react";
+import Popover from "@mui/material/Popover";
 import Box from "@mui/material/Box";
-import Header from "../Header";
-// import Header from "./Header/index.js";
+import Typography from "@mui/material/Typography";
+import { Button, Input, Container, Divider } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import IconButton from "@mui/material/IconButton";
+import Avatar from "@mui/material/Avatar";
 
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired
-};
-
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`
-  };
-}
-
-export default function Token() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
+const Token = () => {
   return (
     <div>
-      <Button
-        id="demo-positioned-button"
-        aria-controls={open ? "demo-positioned-menu" : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? "true" : undefined}
-        onClick={handleClick}
-      >
-        0 TOKen
-      </Button>
-      <Menu
-        id="demo-positioned-menu"
-        aria-labelledby="demo-positioned-button"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "left"
-        }}
-        transformOrigin={{
-          vertical: "top",
-          horizontal: "left"
-        }}
-      >
-        <Box sx={{ display: "flex", flexDirection: "column", width: "100%" }}>
-          <Box sx={{}}>
-            <Tabs
-              sx={{
-                display: "flex",
-                flexDirection: "colomn",
-                border: "red"
-              }}
-              value={value}
-              onChange={handleChange}
-              aria-label="basic tabs example"
-            >
-              <Tab label="create colection" {...a11yProps(0)} />
-              <Tab label="my profile" {...a11yProps(1)} />
-              <Tab label="my fevorate" {...a11yProps(2)} />
-              <Tab label="manege found" {...a11yProps(3)} />
-              <Tab label="log Out" {...a11yProps(4)} />
-            </Tabs>
-          </Box>
-          <TabPanel value={value} index={0}>
-            {/* <Header /> */}
-            <Header />
-          </TabPanel>
-          <TabPanel value={value} index={1}>
-            Item Two
-          </TabPanel>
-          <TabPanel value={value} index={2}>
-            Item Three
-          </TabPanel>
+      <Container>
+        <Box sx={{ marginBottom: "20px", marginTop: "40px", FontFace: "bold" }}>
+          <Typography variant="h3" color="blue" component="div">
+            collection
+          </Typography>
         </Box>
-      </Menu>
+      </Container>
+      <Box sx={{ display: "flex" }}>
+        <Box sx={{ heigth: "300px", width: "300px" }}>
+          <IconButton>
+            <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+          </IconButton>
+        </Box>
+        <Box sx={{ justifyContent: "center" }}>
+          <Typography variant="h6" color="black" component="div">
+            We recommend on image of at least 400*400. Gifs work too.
+          </Typography>
+          <Button
+            // aria-describedby={id}
+            variant="contained"
+            // onClick={handleClick}
+          >
+            Choose File
+          </Button>
+        </Box>
+      </Box>
+      <Container>
+        <Box sx={{ marginBottom: "50px", marginTop: "40px" }}>
+          <Box sx={{ display: "flex" }}>
+            <Typography variant="h5" color="black" component="div">
+              Alternative text for NFT
+            </Typography>
+            <Typography variant="h5" color="gray" component="div">
+              (optional)
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              marginBottom: "10px",
+              marginTop: "30px"
+            }}
+          >
+            <Typography variant="h7" color="gray" component="div">
+              Image Description in details (do not start with word "image")
+            </Typography>
+          </Box>
+          <Divider></Divider>
+          <Box
+            sx={{
+              marginBottom: "30px",
+              marginTop: "10px"
+            }}
+          >
+            <Typography variant="h7" color="gray" component="div">
+              Text that will be used in VoiceOver for People with disabillities
+            </Typography>
+          </Box>
+        </Box>
+      </Container>
+
+      <Container>
+        <Box sx={{ marginBottom: "50px", marginTop: "40px" }}>
+          <Box sx={{ display: "flex" }}>
+            <Typography variant="h5" color="black" component="div">
+              Alternative text for NFT
+            </Typography>
+            <Typography variant="h5" color="gray" component="div">
+              (optional)
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              marginBottom: "10px",
+              marginTop: "30px"
+            }}
+          >
+            <Typography variant="h7" color="gray" component="div">
+              Image Description in details (do not start with word "image")
+            </Typography>
+          </Box>
+          <Divider></Divider>
+          <Box
+            sx={{
+              marginBottom: "30px",
+              marginTop: "10px"
+            }}
+          >
+            <Typography variant="h7" color="gray" component="div">
+              Text that will be used in VoiceOver for People with disabillities
+            </Typography>
+          </Box>
+        </Box>
+      </Container>
+
+      <Container>
+        <Box sx={{ marginBottom: "50px", marginTop: "40px" }}>
+          <Box sx={{ display: "flex" }}>
+            <Typography variant="h5" color="black" component="div">
+              Alternative text for NFT
+            </Typography>
+            <Typography variant="h5" color="gray" component="div">
+              (optional)
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              marginBottom: "10px",
+              marginTop: "30px"
+            }}
+          >
+            <Typography variant="h7" color="gray" component="div">
+              Image Description in details (do not start with word "image")
+            </Typography>
+          </Box>
+          <Divider></Divider>
+          <Box
+            sx={{
+              marginBottom: "30px",
+              marginTop: "10px"
+            }}
+          >
+            <Typography variant="h7" color="gray" component="div">
+              Text that will be used in VoiceOver for People with disabillities
+            </Typography>
+          </Box>
+        </Box>
+      </Container>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Button variant="outlined">Create collection</Button>
+      </Box>
     </div>
   );
-}
+};
+export default Token;

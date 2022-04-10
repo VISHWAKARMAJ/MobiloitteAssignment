@@ -18,6 +18,7 @@ import AirlineSeatLegroomExtraTwoToneIcon from "@mui/icons-material/AirlineSeatL
 import CameraEnhanceTwoToneIcon from "@mui/icons-material/CameraEnhanceTwoTone";
 import NotListedLocationOutlinedIcon from "@mui/icons-material/NotListedLocationOutlined";
 import Stack from "@mui/material/Stack";
+import Token from "../Token";
 
 const Common = () => {
   const [file, setFile] = useState("");
@@ -128,12 +129,11 @@ const Common = () => {
                         <label htmlFor="contained-button-file">
                           <Box
                             sx={{
-                              marginBottom: "20px",
+                              marginBottom: "50px",
                               marginTop: "40px",
-                              FontFace: "bold",
-                              heigth: "200px",
-                              width: "50px",
-                              backgroundColor: "black"
+                              height: "900px",
+                              width: "450px",
+                              borderRadius: "50px"
                             }}
                           >
                             <Input
@@ -143,7 +143,9 @@ const Common = () => {
                               type="file"
                               onClick={handleChange}
                             />
+                            <Token />
                           </Box>
+                          {/* </Box> */}
                         </label>
                       </Stack>
                     </Popover>
@@ -503,6 +505,7 @@ const Common = () => {
               </Box>
 
               {/* Properties */}
+              {/* <Button variant="outlined">HIDE ADVANCED SETTINGS</Button> */}
 
               <Container>
                 <Box sx={{ marginBottom: "50px", marginTop: "40px" }}>
