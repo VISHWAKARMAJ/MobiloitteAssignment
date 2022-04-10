@@ -112,7 +112,7 @@ const Common = () => {
                       variant="contained"
                       onClick={handleClick}
                     >
-                      Open Popover
+                      upload file
                     </Button>
 
                     <Popover
@@ -125,32 +125,10 @@ const Common = () => {
                         horizontal: "left"
                       }}
                     >
-                      <Stack direction="row" alignItems="center" spacing={2}>
-                        <label htmlFor="contained-button-file">
-                          <Box
-                            sx={{
-                              marginBottom: "50px",
-                              marginTop: "40px",
-                              height: "900px",
-                              width: "450px",
-                              borderRadius: "50px"
-                            }}
-                          >
-                            <Input
-                              accept="image/*"
-                              id="contained-button-file"
-                              multiple
-                              type="file"
-                              onClick={handleChange}
-                            />
-                            <Token />
-                          </Box>
-                          {/* </Box> */}
-                        </label>
-                      </Stack>
+                      <Token />
                     </Popover>
+                    {/* <img src={file} alt="" /> */}
                   </Container>
-                  <img src={file} alt="" />
                 </Box>
               </Container>
 
@@ -182,7 +160,7 @@ const Common = () => {
                         variant="contained"
                         onClick={handleClick}
                       >
-                        Open Popover
+                        upload cover
                       </Button>
                       <Popover
                         id={id}
@@ -194,24 +172,11 @@ const Common = () => {
                           horizontal: "left"
                         }}
                       >
-                        <Stack direction="row" alignItems="center" spacing={2}>
-                          <label htmlFor="contained-button-file">
-                            <Input
-                              accept="image/*"
-                              id="contained-button-file"
-                              multiple
-                              type="file"
-                              onClick={handleChange1}
-                            />
-                            <Button variant="contained" component="span">
-                              Upload
-                            </Button>
-                          </label>
-                        </Stack>
+                        <Token />
                       </Popover>
+                      <Container></Container>
                     </Container>
                   </Container>
-                  <img src={file1} alt="" />
                 </Box>
               </Container>
 
